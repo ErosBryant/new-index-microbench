@@ -24,7 +24,7 @@
 
 4. Generate
 
-   ## Need ***Make*** file in masstree & pcm & rotate-skiplist
+   - Need ***Make*** file in masstree & pcm & rotate-skiplist
 
    ```sh
    mkdir workloads
@@ -48,7 +48,17 @@ sudo ln -s /usr/bin/python3 /usr/bin/python
 The generated workload files will be in ./workloads
 
 1. NOTE: To generate email-key workloads, you need an email list (list.txt)# index-microbench 
-
+2. use: ./workload a rand bwtree 1
+   1. workload type: a, c, e, none
+      "none" type means we just load the file and exit. 
+   This serves as the base line for microbenchamrks
+   2. key distribution: rand, mono
+   3. index type: bwtree skiplist masstree artolc btreeolc btreertm
+   4. number of threads (integer)
+      --hyper: Whether to pin all threads on NUMA node 0
+      --mem: Whether to monitor memory access
+      --numa: Whether to monitor NUMA throughput
+      --insert-only: Whether to only execute insert operations
 
 ### INSTALL NOTES
 
@@ -58,4 +68,4 @@ The generated workload files will be in ./workloads
 - Install libnuma-dev
 - Install Java 8
 - Install Pythone(3)
-etc. 
+   - etc. 
