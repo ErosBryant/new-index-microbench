@@ -64,10 +64,10 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define if you are using libjemalloc for malloc. */
-#define HAVE_JEMALLOC 1
+/* #undef HAVE_JEMALLOC */
 
 /* Define if you have libnuma. */
-/* #undef HAVE_LIBNUMA */
+#define HAVE_LIBNUMA 1
 
 /* Define to 1 if the system has the type `long long'. */
 #define HAVE_LONG_LONG 1
@@ -85,7 +85,7 @@
 #define HAVE_MEMORY_H 1
 
 /* Define to 1 if you have the <numa.h> header file. */
-/* #undef HAVE_NUMA_H */
+#define HAVE_NUMA_H 1
 
 /* Define if off_t and long are the same type. */
 #define HAVE_OFF_T_IS_LONG 1

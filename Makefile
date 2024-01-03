@@ -1,9 +1,15 @@
-CC = gcc-5 
-CXX = g++-5 -std=gnu++0x
+
+# MEMMGR = -lpapi -ltcmalloc_minimal
+# CFLAGS = -g -O3 -Wno-invalid-offsetof -mcx16 -DNDEBUG -DBWTREE_NODEBUG $(DEPCFLAGS) -include masstree/config.h
+CC = gcc
+CXX = g++ -std=gnu++0x 
+
 DEPSDIR := masstree/.deps
 DEPCFLAGS = -MD -MF $(DEPSDIR)/$*.d -MP
-MEMMGR = -lpapi -ltcmalloc_minimal
+MEMMGR = -L/usr/lib/x86_64-linux-gnu -lpapi /usr/lib/x86_64-linux-gnu/libtcmalloc_minimal.so.4 -lpthread -lm -ltbb -latomic
+
 CFLAGS = -g -O3 -Wno-invalid-offsetof -mcx16 -DNDEBUG -DBWTREE_NODEBUG $(DEPCFLAGS) -include masstree/config.h
+
 
 # By default just use 1 thread. Override this option to allow running the
 # benchmark with 20 threads. i.e. THREAD_NUM=20 make run_all_atrloc
@@ -18,6 +24,7 @@ SL_OBJS=$(patsubst %.cpp,%.o,$(wildcard $(SL_DIR)/*.cpp))
 $(info skip list object files: $(SL_OBJS))
 
 SNAPPY = /usr/lib/libsnappy.so.1.3.0
+
 
 all: workload
 

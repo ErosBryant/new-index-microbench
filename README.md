@@ -10,6 +10,7 @@
    mv ycsb-0.11.0 YCSB
    ``` 
 
+
 2. Create Workload Spec 
  
    The default workload a-f are in ./workload_spec 
@@ -23,20 +24,38 @@
 
 4. Generate
 
+   ## Need ***Make*** file in masstree & pcm & rotate-skiplist
+
    ```sh
+   mkdir workloads
    make generate_workload
    ```
 
-   The generated workload files will be in ./workloads
+5. If you use Python3
 
-5. NOTE: To generate email-key workloads, you need an email list (list.txt)# index-microbench 
+Change code in YCSB/bin/ycsb line 206:
+- except subprocess.CalledProcessError, err:
+  - except subprocess.CalledProcessError as err:
 
-## Publications ##
+Change all print in YCSB/bin/ycsb：
+- print >>
+  - print (  )
 
-This index benchmarking framework has been used as the experimental environment for the following research papers:
+```sh
+sudo ln -s /usr/bin/python3 /usr/bin/python
+```
 
-Ziqi Wang, Andrew Pavlo, Hyeontaek Lim, Viktor Leis, Huanchen Zhang,
-Michael Kaminsky, and David G. Andersen. 2018. **Building a Bw-Tree Takes
-More Than Just Buzz Words.** In Proceedings of 2018 International Conference
-on Management of Data (SIGMOD’18). ACM, New York, NY, USA, 16 pages.
-https://doi.org/10.1145/3183713.3196895
+The generated workload files will be in ./workloads
+
+1. NOTE: To generate email-key workloads, you need an email list (list.txt)# index-microbench 
+
+
+### INSTALL NOTES
+
+- Install papi
+- Install tbb
+- Install atomic from package manager
+- Install libnuma-dev
+- Install Java 8
+- Install Pythone(3)
+etc. 

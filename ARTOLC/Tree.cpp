@@ -4,6 +4,7 @@
 #include "N.cpp"
 #include "Epoche.cpp"
 #include "Key.h"
+#include <functional>
 
 
 namespace ART_OLC {

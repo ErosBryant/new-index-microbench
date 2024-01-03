@@ -24,8 +24,8 @@ def reverseHostName ( email ) :
 #####################################################################################
 
 if (len(sys.argv) != 2) :
-    print bcolors.WARNING + 'Usage:'
-    print 'workload file' + bcolors.ENDC
+    print(bcolors.WARNING, 'Usage:')
+    print('workload file', bcolors.ENDC)
 
 config_file = sys.argv[1]
 
@@ -41,9 +41,10 @@ output_dir='workloads/'
 workload = args[0]
 key_type = args[1]
 
-print bcolors.OKGREEN + 'workload = ' + workload
-print 'key type = ' + key_type + bcolors.ENDC
+print(bcolors.OKGREEN, 'workload =', workload)
+print('key type =', key_type, bcolors.ENDC)
 
+# ----
 email_list = 'list.txt'
 email_list_size = 27549660
 

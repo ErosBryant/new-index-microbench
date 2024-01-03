@@ -1,11 +1,11 @@
 AR = ar
 CC = gcc
-CXX = g++ -std=gnu++0x
+CXX = g++
 CFLAGS = -g -W -Wall -O2 -fPIC
 DEPSDIR := .deps
 DEPCFLAGS = -MD -MF $(DEPSDIR)/$*.d -MP
 ifeq ($(strip $(MEMMGR)), )
-  MEMMGR = -ljemalloc
+  MEMMGR = 
 endif
 ifneq ($(strip $(KEYSWAP)), )
   CFLAGS += -DKEYSWAP
@@ -16,7 +16,7 @@ endif
 ifneq ($(strip $(NOSUPERPAGE)), )
   CFLAGS += -DNOSUPERPAGE
 endif
-LIBS =  -lpthread -lm
+LIBS = -lnuma  -lpthread -lm
 LDFLAGS = 
 
 all: mtIndexAPI.a

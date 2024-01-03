@@ -1,6 +1,6 @@
 #-include Makefile.common
 
-CXX=g++-5
+CXX=g++
 CXX_FLAGS=-std=c++11 -pthread -O3 -g
 
 .PHONY:	all clean
