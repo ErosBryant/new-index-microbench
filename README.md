@@ -57,26 +57,26 @@
 
 (Optional) 7. If you use Python3
 
-Change code in YCSB/bin/ycsb line 206:
+   Change code in YCSB/bin/ycsb line 206:
    
    - except subprocess.CalledProcessError, err:
    - except subprocess.CalledProcessError as err:
 
-Change all print in YCSB/bin/ycsb：
-- print >>
-  - print (  )
+   Change all print in YCSB/bin/ycsb：
+   - print >>
+     - print (  )
 
-```sh
-sudo ln -s /usr/bin/python3 /usr/bin/python
-```
+   ```sh
+   sudo ln -s /usr/bin/python3 /usr/bin/python
+   ```
 
 ### Usage
 
-The generated workload files will be in ./workloads
+   The generated workload files will be in ./workloads
 
-**NOTE** To generate email-key workloads, you need an email list (list.txt)# index-microbench 
+   **NOTE** To generate email-key workloads, you need an email list (list.txt)# index-microbench 
 
-**Usage**
+   **Usage**
    Example: ./workload a rand bwtree 1
 
    - Parameter (1)
