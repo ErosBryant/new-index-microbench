@@ -55,7 +55,7 @@
    make
    ```
 
-(Optional) 7. If you use Python3
+7. If you use Python3 (Optional)
 
    Change code in YCSB/bin/ycsb line 206:
    
