@@ -41,13 +41,14 @@
    ```
 
 5. Generate Workloads
-   # mkdir workloads   
+   
+   <!--  mkdir workloads-->
    ```sh
 
    make generate_workload
    ```
 
-6. Make (Benchmakr Tool)
+7. Make (Benchmakr Tool)
 
    - Before doing make commands, your current path must be a /new-index-microbench
 
@@ -55,7 +56,7 @@
    make
    ```
 
-7. If you use Python3 (Optional)
+8. If you use Python3 (Optional)
 
    Change code in YCSB/bin/ycsb line 206:
    
