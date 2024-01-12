@@ -41,9 +41,9 @@
    ```
 
 5. Generate Workloads
-   
+   # mkdir workloads   
    ```sh
-   mkdir workloads
+
    make generate_workload
    ```
 
