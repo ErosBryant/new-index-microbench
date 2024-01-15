@@ -44,7 +44,7 @@
    
    <!--  mkdir workloads-->
    ```sh
-
+    mkdir workloads
    make generate_workload
    ```
 
